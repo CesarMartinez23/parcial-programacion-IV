@@ -24,9 +24,10 @@ export default {
     <div class="col-sm-9">
       <h2 class="text-center">Regions</h2>
       <countries />
-    </div>
-    <div class="cotainer d-flex align-items-center justify-content-center">
-      <paginate />
+      <br />
+      <div class="cotainer d-flex align-items-center justify-content-center">
+        <paginate />
+      </div>
     </div>
   </div>
 </template>

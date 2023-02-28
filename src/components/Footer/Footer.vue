@@ -3,7 +3,9 @@
     <!-- Copyright -->
     <div class="text-center p-3 bg-dark text-white">
       © Prorgramacion IV 2023 <span class="m-3"></span>
-      <a href="https://github.com" target="_blank"
+      <a
+        href="https://github.com/CesarMartinez23/parcial-programacion-IV.git"
+        target="_blank"
         ><i class="bi bi-github"> Parcial VUE JS</i></a
       >
     </div>
