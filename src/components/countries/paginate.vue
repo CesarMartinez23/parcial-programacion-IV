@@ -1,42 +1,42 @@
+<script>
+import Paginate from "vuejs-paginate-next";
+export default {
+  data() {
+    return {
+      pageCount: 0,
+    };
+  },
+  components: {
+    Paginate,
+  },
+  computed: {
+    pageCounter() {
+      this.pageCount = Math.ceil(this.$store.state.total / 10);
+      if (this.$store.state.currentPage > this.pageCount) {
+        this.$store.state.currentPage = 1;
+      }
+      return this.pageCount;
+    },
+    currentPage: {
+      get() {
+        return this.$store.state.currentPage;
+      },
+      set(value) {
+        this.$store.commit("SET_CURRENTPAGE", value);
+      },
+    },
+  },
+};
+</script>
+
 <template>
-    <Paginate
+  <Paginate
     :page-count="pageCounter"
     v-model="currentPage"
     :page-range="3"
     :margin-pages="2"
-    />
+  />
 </template>
-
-<script>
-import Paginate from "vuejs-paginate-next";
-export default {
-    data() {
-    return {
-        pageCount: 0,
-    };
-    },
-    components: {
-    Paginate,
-    },
-    computed: {
-    pageCounter() {
-        this.pageCount = Math.ceil(this.$store.state.total / 10);
-        if (this.$store.state.currentPage > this.pageCount) {
-        this.$store.state.currentPage = 1;
-        }
-        return this.pageCount;
-    },
-    currentPage: {
-        get() {
-        return this.$store.state.currentPage;
-        },
-        set(value) {
-        this.$store.commit("SET_CURRENTPAGE", value);
-        },
-    },
-    },
-};
-</script>
 
 <style lang="css">
 /* Adopt bootstrap pagination stylesheet. */
